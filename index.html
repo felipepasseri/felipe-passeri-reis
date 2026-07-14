@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Felipe Passeri Reis - Desenvolvedor Full Stack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Biblioteca AOS para animações no Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Background Animado de Fundo -->
+    <div class="ambient-bg"></div>
+
+    <header class="header">
+      <div class="container flex-between">
+        <div class="logo">
+          <span class="logo-icon">FP</span>
+          <span class="logo-text">Felipe Passeri Reis</span>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#inicio" class="active">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <div class="theme-toggle" id="theme-toggle" title="Mudar Tema">
+            <i class="ph ph-sun"></i>
+            <div class="toggle-switch"></div>
+          </div>
+          <!-- Botão Menu Mobile -->
+          <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <i class="ph ph-list"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="inicio" class="hero">
+      <div class="container hero-content">
+        <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+          <span class="subtitle">DESENVOLVEDOR FULL STACK</span>
+          <h1>Felipe Passeri Reis</h1>
+          <p>
+            Desenvolvedor Full Stack apaixonado por criar soluções digitais
+            eficientes, escaláveis e centradas em pessoas. Transformando linhas
+            de código em experiências incríveis.
+          </p>
+          <div class="hero-buttons">
+            <a href="#portfolio" class="btn btn-primary"
+              >Ver meu trabalho <i class="ph ph-arrow-right"></i
+            ></a>
+            <a href="#contato" class="btn btn-outline"
+              >Entrar em contato <i class="ph ph-chat-circle"></i
+            ></a>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/felipepasseri" target="_blank"
+              ><i class="ph ph-github-logo"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/felipe-reis-b1957a313/"
+              target="_blank"
+              ><i class="ph ph-linkedin-logo"></i
+            ></a>
+            <a
+              href="https://api.whatsapp.com/send?phone=5519999552008"
+              target="_blank"
+              ><i class="ph ph-whatsapp-logo"></i
+            ></a>
+          </div>
+        </div>
+
+        <div
+          class="hero-image"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          <div class="glow-bg"></div>
+          <div class="floating-icon"><i class="ph ph-code"></i></div>
+          <img
+            src="img/sua-foto.png"
+            alt="Felipe Passeri Reis"
+            class="profile-pic"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="about-skills">
+      <div class="container grid-2-cols">
+        <div class="about-text" data-aos="fade-up" data-aos-duration="800">
+          <span class="subtitle">SOBRE MIM</span>
+          <h2>Mais sobre mim</h2>
+          <p>
+            Desenvolvedor Full Stack apaixonado por transformar ideias em
+            aplicações completas, modernas e escaláveis. Com uma base técnica
+            construída na Etec e aprendizado contínuo em tecnologia, meu foco é
+            entregar código limpo e produtos de alto nível. Quer saber como
+            posso agregar ao seu projeto ou equipe? Baixe meu currículo para ver
+            minha habilidade técnica em detalhes e confira meus projetos em
+            destaque logo a seguir.
+          </p>
+          <a href="#" class="btn btn-outline btn-download"
+            >Baixar Curriculo <i class="ph ph-download-simple"></i
+          ></a>
+        </div>
+
+        <div
+          class="skills-wrapper"
+          id="skills"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="200"
+        >
+          <div class="skill-category">
+            <h3><i class="ph ph-monitor"></i> Frontend</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <i class="devicon-html5-plain colored"></i><span>HTML5</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-css3-plain colored"></i><span>CSS3</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-javascript-plain colored"></i
+                ><span>JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-bootstrap-plain colored"></i
+                ><span>Bootstrap</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3><i class="ph ph-database"></i> Backend</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <i class="devicon-java-plain colored"></i><span>Java</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-csharp-plain colored"></i><span>C#</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-php-plain colored"></i><span>PHP</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3><i class="ph ph-wrench"></i> Ferramentas</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <i class="devicon-git-plain colored"></i><span>Git</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-github-original"></i><span>GitHub</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-vscode-plain colored"></i><span>VS Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <div
+          class="section-header text-center"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
+          <span class="subtitle">PORTFÓLIO</span>
+          <h2>Projetos em destaque</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Projeto 1 -->
+          <div
+            class="project-card"
+            data-aos="zoom-in-up"
+            data-aos-duration="800"
+            data-aos-delay="100"
+          >
+            <div class="status-badge">Em desenvolvimento</div>
+            <div class="img-wrapper">
+              <img src="img/espaco-em-foco.png" alt="Espaço em Foco" />
+            </div>
+            <div class="project-content">
+              <h3>Espaço em Foco</h3>
+              <p>
+                Site educacional gamificado para tornar o aprendizado divertido
+                e interativo com ranks e quizzes.
+              </p>
+              <div class="tech-tags">
+                <span>Educação</span><span>Jogos</span><span>Quiz</span
+                ><span>Comunidade</span>
+              </div>
+              <button class="project-link btn-open-modal" data-id="espaco-foco">
+                Ver projeto <i class="ph ph-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Projeto 2 -->
+          <div
+            class="project-card"
+            data-aos="zoom-in-up"
+            data-aos-duration="800"
+            data-aos-delay="300"
+          >
+            <div class="status-badge">Em desenvolvimento</div>
+            <div class="img-wrapper">
+              <img src="img/projeto-vertice.jpeg" alt="Projeto Vértice" />
+            </div>
+            <div class="project-content">
+              <h3>Projeto Vértice</h3>
+              <p>
+                Sistema de análise preditiva de clima para proteção de
+                plantações de pequenos agricultores.
+              </p>
+              <div class="tech-tags">
+                <span>Dados</span><span>Análises</span><span>Predição</span
+                ><span>Clima</span><span>IA</span>
+              </div>
+              <button class="project-link btn-open-modal" data-id="vertice">
+                Ver projeto <i class="ph ph-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-40" data-aos="fade-up" data-aos-delay="200">
+          <a
+            href="https://github.com/felipepasseri"
+            target="_blank"
+            class="btn btn-outline btn-all-projects"
+            >Ver no GitHub <i class="ph ph-github-logo"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contact">
+      <div class="container grid-2-cols">
+        <div class="contact-info" data-aos="fade-right" data-aos-duration="800">
+          <span class="subtitle">CONTATO</span>
+          <h2>Vamos trabalhar juntos?</h2>
+          <p>
+            Tem um projeto em mente ou precisa de ajuda para tirar uma ideia do
+            papel? Vamos conversar!
+          </p>
+
+          <ul class="contact-list">
+            <li><i class="ph ph-whatsapp-logo"></i> (19) 99955-2008</li>
+            <li>
+              <i class="ph ph-envelope-simple"></i> reisfelipe429@gmail.com
+            </li>
+            <li><i class="ph ph-map-pin"></i> Piracicaba, SP – Brasil</li>
+          </ul>
+
+          <div class="social-links mt-20">
+            <a href="https://github.com/felipepasseri" target="_blank"
+              ><i class="ph ph-github-logo"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/felipe-reis-b1957a313/"
+              target="_blank"
+              ><i class="ph ph-linkedin-logo"></i
+            ></a>
+            <a
+              href="https://api.whatsapp.com/send?phone=5519999552008"
+              target="_blank"
+              ><i class="ph ph-whatsapp-logo"></i
+            ></a>
+          </div>
+        </div>
+
+        <div
+          class="contact-form glass-panel"
+          data-aos="fade-left"
+          data-aos-duration="800"
+          data-aos-delay="200"
+        >
+          <form id="form">
+            <div class="form-row">
+              <input type="text" placeholder="Nome" required />
+              <input type="email" placeholder="E-mail" required />
+            </div>
+            <input type="text" placeholder="Assunto" required />
+            <textarea placeholder="Mensagem" rows="5" required></textarea>
+            <button type="submit" class="btn btn-primary btn-submit">
+              Enviar mensagem <i class="ph ph-paper-plane-tilt"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container flex-between">
+        <div class="footer-logo">
+          <span class="logo-icon-small">FP</span>
+          <p>&copy; 2026 Felipe Passeri Reis. Todos os direitos reservados.</p>
+        </div>
+        <a href="#inicio" class="back-to-top"
+          >Voltar ao topo <i class="ph ph-arrow-up"></i
+        ></a>
+      </div>
+    </footer>
+
+    <!-- MODAL DE PROJETOS -->
+    <div class="modal-overlay" id="project-modal">
+      <div class="modal-content glass-panel">
+        <button class="close-modal" id="close-modal">
+          <i class="ph ph-x"></i>
+        </button>
+        <div class="modal-body">
+          <p class="modal-hint">
+            <i class="ph ph-info"></i> Navegue pelas imagens usando as setas ou
+            clique para expandir
+          </p>
+
+          <div class="modal-gallery-wrapper">
+            <button class="slider-arrow prev" id="slider-prev">
+              <i class="ph ph-caret-left"></i>
+            </button>
+            <div class="modal-images" id="modal-images"></div>
+            <button class="slider-arrow next" id="slider-next">
+              <i class="ph ph-caret-right"></i>
+            </button>
+          </div>
+
+          <div class="modal-info">
+            <h2 id="modal-title">Título do Projeto</h2>
+            <p id="modal-description">
+              Descrição detalhada do projeto aparecerá aqui.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIGHTBOX (IMAGEM EXPANDIDA) -->
+    <div class="lightbox-overlay" id="lightbox-modal">
+      <button class="close-lightbox" id="close-lightbox">
+        <i class="ph ph-x"></i>
+      </button>
+      <img
+        src=""
+        alt="Imagem Expandida"
+        id="lightbox-image"
+        class="lightbox-image"
+      />
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
