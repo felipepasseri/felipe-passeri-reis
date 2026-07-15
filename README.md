@@ -24,7 +24,6 @@ Um portfólio profissional moderno, responsivo e interativo, construído com HTM
 - [Funcionalidades](#-funcionalidades)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Como Executar](#-como-executar)
 - [Projetos em Destaque](#-projetos-em-destaque)
 - [Contato](#-contato)
 - [Licença](#-licença)
