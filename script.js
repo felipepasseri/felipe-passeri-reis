@@ -208,10 +208,3 @@ document.addEventListener('keydown', (e) => {
 
 // --- 7. PREVENÇÃO DO FORMULÁRIO DE CONTATO ---
 const form = document.getElementById('form');
-if (form) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Mensagem enviada com sucesso! (Lógica de backend a ser implementada)');
-        form.reset();
-    });
-}

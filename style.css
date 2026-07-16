@@ -276,6 +276,7 @@ input, textarea {
     width: 100%; padding: 1.2rem; margin-bottom: 1rem; 
     background: rgba(0,0,0,0.2); border: var(--glass-border); border-radius: 8px; 
     color: var(--text-white); transition: var(--transition); outline: none; font-size: 0.95rem;
+    resize: none;
 }
 input:focus, textarea:focus { border-color: var(--primary-neon); box-shadow: 0 0 10px rgba(0, 229, 255, 0.1); background: rgba(0,0,0,0.4);}
 .btn-submit { width: 100%; margin-top: 1rem; }

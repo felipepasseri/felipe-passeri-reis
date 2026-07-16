@@ -1,3 +1,10 @@
+<?php
+session_start();
+// Gera um token CSRF único por sessão
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+?>
 <!doctype html>
 <html lang="pt-BR">
   <head>
@@ -280,7 +287,7 @@
           <ul class="contact-list">
             <li><i class="ph ph-whatsapp-logo"></i> (19) 99955-2008</li>
             <li>
-              <i class="ph ph-envelope-simple"></i> reisfelipe429@gmail.com
+              <i class="ph ph-envelope-simple"></i> contatofelipepasseridev@gmail.com
             </li>
             <li><i class="ph ph-map-pin"></i> Piracicaba, SP – Brasil</li>
           </ul>
@@ -308,13 +315,19 @@
           data-aos-duration="800"
           data-aos-delay="200"
         >
-          <form id="form">
+          <?php if (isset($_GET['erro']) && $_GET['erro'] === 'campovazio'): ?>
+            <p style="color: #ef4444; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; text-align: center;">
+              <i class="ph ph-warning-circle"></i> Preencha todos os campos antes de enviar.
+            </p>
+          <?php endif; ?>
+          <form id="form" method="post" action="enviar-email.php">
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>" />
             <div class="form-row">
-              <input type="text" placeholder="Nome" required />
-              <input type="email" placeholder="E-mail" required />
+              <input type="text" placeholder="Nome" name="nome" />
+              <input type="text" placeholder="Email ou número de telefone" name="email" />
             </div>
-            <input type="text" placeholder="Assunto" required />
-            <textarea placeholder="Mensagem" rows="5" required></textarea>
+            <input type="text" placeholder="Assunto" name="assunto" />
+            <textarea placeholder="Mensagem" name="mensagem" rows="5"></textarea>
             <button type="submit" class="btn btn-primary btn-submit">
               Enviar mensagem <i class="ph ph-paper-plane-tilt"></i>
             </button>
