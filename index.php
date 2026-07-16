@@ -128,7 +128,7 @@ if (empty($_SESSION['csrf_token'])) {
             minha habilidade técnica em detalhes e confira meus projetos em
             destaque logo a seguir.
           </p>
-          <a href="#" class="btn btn-outline btn-download"
+          <a href="Felipe_Passeri_Reis.pdf" download="Felipe_Passeri_Reis.pdf" target="_blank" class="btn btn-outline btn-download"
             >Baixar Curriculo <i class="ph ph-download-simple"></i
           ></a>
         </div>
@@ -322,10 +322,17 @@ if (empty($_SESSION['csrf_token'])) {
           <?php endif; ?>
           <form id="form" method="post" action="enviar-email.php">
             <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>" />
-            <div class="form-row">
-              <input type="text" placeholder="Nome" name="nome" />
-              <input type="text" placeholder="Email ou número de telefone" name="email" />
+            <input type="text" placeholder="Nome" name="nome" />
+            <div class="contact-type-toggle">
+              <button type="button" class="contact-type-btn active" data-type="email">
+                <i class="ph ph-envelope-simple"></i> Email
+              </button>
+              <button type="button" class="contact-type-btn" data-type="telefone">
+                <i class="ph ph-phone"></i> Telefone
+              </button>
             </div>
+            <input type="email" placeholder="Seu melhor email" name="contato" id="input-email" />
+            <input type="tel" placeholder="(00) 00000-0000" name="contato" id="input-telefone" style="display: none;" disabled />
             <input type="text" placeholder="Assunto" name="assunto" />
             <textarea placeholder="Mensagem" name="mensagem" rows="5"></textarea>
             <button type="submit" class="btn btn-primary btn-submit">
