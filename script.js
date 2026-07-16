@@ -206,12 +206,125 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// --- 7. PREVENÇÃO DO FORMULÁRIO DE CONTATO ---
+// --- 7. VALIDAÇÃO DO FORMULÁRIO DE CONTATO ---
 const form = document.getElementById('form');
 if (form) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Mensagem enviada com sucesso! (Lógica de backend a ser implementada)');
-        form.reset();
+    const inputEmail = document.getElementById('input-email');
+    const inputTelefone = document.getElementById('input-telefone');
+    const toggleBtns = document.querySelectorAll('.contact-type-btn');
+    let tipoContato = 'email'; // Estado atual do toggle
+
+    // --- Toggle entre Email e Telefone ---
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tipo = btn.getAttribute('data-type');
+            if (tipo === tipoContato) return; // Já está selecionado
+
+            tipoContato = tipo;
+
+            // Atualiza visual dos botões
+            toggleBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Alterna os campos
+            if (tipo === 'email') {
+                inputEmail.style.display = '';
+                inputEmail.disabled = false;
+                inputTelefone.style.display = 'none';
+                inputTelefone.disabled = true;
+                inputTelefone.value = '';
+            } else {
+                inputTelefone.style.display = '';
+                inputTelefone.disabled = false;
+                inputEmail.style.display = 'none';
+                inputEmail.disabled = true;
+                inputEmail.value = '';
+            }
+
+            // Remove erro ao trocar de tipo
+            const errorMsg = document.getElementById('form-error-msg');
+            if (errorMsg) errorMsg.remove();
+        });
     });
+
+    // --- Máscara para telefone: (00) 00000-0000 ---
+    if (inputTelefone) {
+        inputTelefone.addEventListener('input', (e) => {
+            let valor = e.target.value.replace(/\D/g, ''); // Remove tudo que não é número
+            if (valor.length > 11) valor = valor.slice(0, 11);
+
+            if (valor.length > 6) {
+                valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
+            } else if (valor.length > 2) {
+                valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
+            } else if (valor.length > 0) {
+                valor = `(${valor}`;
+            }
+
+            e.target.value = valor;
+        });
+    }
+
+    // --- Remove erro ao digitar em qualquer campo ---
+    form.querySelectorAll('input:not([type="hidden"]), textarea').forEach(input => {
+        input.addEventListener('input', () => {
+            const errorMsg = document.getElementById('form-error-msg');
+            if (errorMsg) errorMsg.remove();
+        });
+    });
+
+    // --- Validação no submit ---
+    form.addEventListener('submit', (e) => {
+        const existingError = document.getElementById('form-error-msg');
+        if (existingError) existingError.remove();
+
+        const nome = form.querySelector('[name="nome"]').value.trim();
+        const assunto = form.querySelector('[name="assunto"]').value.trim();
+        const mensagem = form.querySelector('[name="mensagem"]').value.trim();
+
+        // Obtém o valor do campo ativo (email ou telefone)
+        const contatoValor = tipoContato === 'email' 
+            ? inputEmail.value.trim() 
+            : inputTelefone.value.trim();
+
+        // Verifica campos vazios
+        if (!nome || !contatoValor || !assunto || !mensagem) {
+            e.preventDefault();
+            mostrarErroFormulario('Preencha todos os campos antes de enviar.');
+            return;
+        }
+
+        // Validação específica por tipo
+        if (tipoContato === 'email') {
+            const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(contatoValor)) {
+                e.preventDefault();
+                mostrarErroFormulario('Por favor, insira um e-mail válido.');
+                return;
+            }
+        } else {
+            // Valida telefone: deve ter pelo menos 10 dígitos (com DDD)
+            const apenasNumeros = contatoValor.replace(/\D/g, '');
+            if (apenasNumeros.length < 10 || apenasNumeros.length > 11) {
+                e.preventDefault();
+                mostrarErroFormulario('Por favor, insira um telefone válido com DDD. Ex: (19) 99955-2008');
+                return;
+            }
+        }
+    });
+}
+
+/**
+ * Exibe uma mensagem de erro em vermelho acima do formulário.
+ */
+function mostrarErroFormulario(texto) {
+    const form = document.getElementById('form');
+    if (!form) return;
+
+    const errorP = document.createElement('p');
+    errorP.id = 'form-error-msg';
+    errorP.style.cssText = 'color: #ef4444; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; text-align: center;';
+    errorP.innerHTML = '<i class="ph ph-warning-circle"></i> ' + texto;
+
+    form.parentNode.insertBefore(errorP, form);
 }
