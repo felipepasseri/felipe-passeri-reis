@@ -42,7 +42,7 @@ body.light-theme input, body.light-theme textarea { background: rgba(255, 255, 2
 body.light-theme .footer { background: rgba(255, 255, 255, 0.8); }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
     font-family: var(--font-main);
@@ -157,7 +157,7 @@ p { color: var(--text-gray); font-size: 1rem; margin-bottom: 1.5rem; transition:
 .mobile-menu-btn:hover { color: var(--primary-neon); }
 
 /* --- HERO SECTION --- */
-.hero { padding: 12rem 0 8rem; }
+.hero { padding: 12rem 0 8rem; overflow: hidden; }
 .hero-content { display: flex; align-items: center; justify-content: space-between; }
 .hero-text { max-width: 550px; }
 .hero-buttons { display: flex; gap: 1rem; margin-bottom: 2rem; }
@@ -194,7 +194,7 @@ p { color: var(--text-gray); font-size: 1rem; margin-bottom: 1.5rem; transition:
 @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
 
 /* --- SOBRE E SKILLS --- */
-.about-skills { padding: 6rem 0; position: relative;}
+.about-skills { padding: 6rem 0; position: relative; overflow: hidden; }
 .about-text { justify-self: center; width: 100%; max-width: 480px; }
 .skills-wrapper { justify-self: center; width: 100%; max-width: 480px; }
 .skill-category { margin-bottom: 1.8rem; } 
@@ -264,7 +264,7 @@ p { color: var(--text-gray); font-size: 1rem; margin-bottom: 1.5rem; transition:
 .project-link:hover i { transform: translateX(5px); }
 
 /* --- CONTATO --- */
-.contact { padding: 6rem 0 8rem; position: relative;}
+.contact { padding: 6rem 0 8rem; position: relative; overflow: hidden; }
 .contact-info { justify-self: center; width: 100%; max-width: 480px; }
 .contact-form { justify-self: center; width: 100%; max-width: 480px; padding: 2.5rem; }
 

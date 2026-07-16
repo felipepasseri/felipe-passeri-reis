@@ -27,6 +27,13 @@ themeToggleBtn.addEventListener('click', () => {
 
 
 // --- 2. INICIALIZAÇÃO DA BIBLIOTECA DE ANIMAÇÃO (AOS) ---
+// Em telas mobile, troca fade-right/fade-left por fade-up para evitar overflow horizontal
+if (window.innerWidth <= 992) {
+    document.querySelectorAll('[data-aos="fade-right"], [data-aos="fade-left"]').forEach(el => {
+        el.setAttribute('data-aos', 'fade-up');
+    });
+}
+
 AOS.init({
     once: true, 
     offset: 100, 
