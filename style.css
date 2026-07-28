@@ -222,12 +222,25 @@ p { color: var(--text-gray); font-size: 1rem; margin-bottom: 1.5rem; transition:
     width: 80%; height: 1px; background: linear-gradient(90deg, transparent, var(--border-color), transparent);
 }
 
-.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); max-width: 950px; margin: 4rem auto 0; gap: 2.5rem; }
+.projects-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 1050px;
+    margin: 4rem auto 0;
+    position: relative;
+}
+
+.projects-grid { 
+    display: flex; gap: 2.5rem; overflow-x: auto; scroll-behavior: smooth; flex-grow: 1; padding: 1rem 0;
+    -ms-overflow-style: none; scrollbar-width: none;
+}
+.projects-grid::-webkit-scrollbar { display: none; }
 
 .project-card { 
     position: relative; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;
     background: var(--bg-card); backdrop-filter: blur(12px); border: var(--glass-border);
     transition: var(--transition); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 480px; flex-shrink: 0;
 }
 .project-card:hover { 
     transform: translateY(-12px); border-color: rgba(0, 229, 255, 0.4);
@@ -421,7 +434,8 @@ input:focus, textarea:focus { border-color: var(--primary-neon); box-shadow: 0 0
     .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
     .skill-item { width: 95px; } 
     .contact-list li { justify-content: center; flex-direction: column; gap: 0.5rem; text-align: center;}
-    .projects-grid { grid-template-columns: 1fr; max-width: 600px; margin: 3rem auto 0; }
+    .projects-wrapper { max-width: 100%; margin: 3rem auto 0; }
+    .project-card { min-width: 100%; }
 }
 
 @media (max-width: 768px) {

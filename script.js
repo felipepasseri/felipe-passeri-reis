@@ -106,6 +106,41 @@ const projectData = {
             'img/dashbord-vertice.png',
             'img/grafico-vertice.png'
         ]
+    },
+    'divino-sabor': {
+        title: 'Divino Sabor Restaurante',
+        description: `
+            <p>O site foi construído para apresentar o cardápio diário aos clientes e facilitar os pedidos. Por trás das cortinas, o sistema possui um painel administrativo robusto para gerenciar produtos, pedidos, fluxo de caixa e funcionários.</p>
+            <br>
+            <ul>
+                <li style="margin-bottom: 0.8rem;"><strong>Área do Cliente (Front-end):</strong> É a vitrine do restaurante. Ela é responsável por carregar o cardápio dinamicamente do banco de dados, dividindo-o entre "Pratos do Dia" e "Outros Itens". A página foi muito bem estruturada com foco em SEO (Search Engine Optimization), contendo meta tags detalhadas, Open Graph para redes sociais, Twitter Cards e dados estruturados (Schema.org).</li>
+                <li style="margin-bottom: 0.8rem;"><strong>Área Administrativa (Back-end / Dashboard):</strong> Toda a parte administrativa é protegida por sessões, garantindo que apenas usuários logados possam acessar. Funciona como um menu principal interativo onde o administrador tem uma visão geral e pode navegar para os diferentes módulos do sistema, que conta com Gestão de Cardápio, Gestão de Pedidos, Gestão Financeira com Gráficos e Filtros, e Gestão de Usuários / RH.</li>
+                <li><strong>Estrutura Técnica e Arquitetura:</strong> Desenvolvido em PHP e banco de dados MySQL, o Front-end foi construído com HTML5, CSS e JavaScript. APIs concentram os scripts que processam ações em segundo plano sem necessariamente recarregar páginas inteiras.</li>
+            </ul>
+        `,
+        link: 'https://divinosaborguaruja.wuaze.com/',
+        images: [
+            'img/divino-sabor-img/divino-sabor-2.png',
+            'img/divino-sabor-img/divino-sabor-3.png',
+            'img/divino-sabor-img/divino-sabor-4.png',
+            'img/divino-sabor-img/divino-sabor-5.png',
+            'img/divino-sabor-img/divino-sabor-6.png',
+            'img/divino-sabor-img/divino-sabor-7.png',
+            'img/divino-sabor-img/divino-sabor-8.png',
+            'img/divino-sabor-img/divino-sabor-9.png',
+            'img/divino-sabor-img/divino-sabor-10.png',
+            'img/divino-sabor-img/divino-sabor-11.png',
+            'img/divino-sabor-img/divino-sabor-12.png',
+            'img/divino-sabor-img/divino-sabor-13.png',
+            'img/divino-sabor-img/divino-sabor-14.png',
+            'img/divino-sabor-img/divino-sabor-15.png',
+            'img/divino-sabor-img/divino-sabor-16.png',
+            'img/divino-sabor-img/divino-sabor-17.png',
+            'img/divino-sabor-img/divino-sabor-18.png',
+            'img/divino-sabor-img/divino-sabor-19.png',
+            'img/divino-sabor-img/divino-sabor-20.png',
+            'img/divino-sabor-img/divino-sabor-21.png'
+        ]
     }
 };
 
@@ -120,6 +155,22 @@ const openModalBtns = document.querySelectorAll('.btn-open-modal');
 // Botões do Slider da Galeria
 const sliderPrevBtn = document.getElementById('slider-prev');
 const sliderNextBtn = document.getElementById('slider-next');
+
+// Slider de Projetos (Home)
+const projectsGrid = document.getElementById('projects-grid');
+const projectsPrevBtn = document.getElementById('projects-prev');
+const projectsNextBtn = document.getElementById('projects-next');
+
+if (projectsNextBtn) {
+    projectsNextBtn.addEventListener('click', () => {
+        projectsGrid.scrollBy({ left: 400, behavior: 'smooth' });
+    });
+}
+if (projectsPrevBtn) {
+    projectsPrevBtn.addEventListener('click', () => {
+        projectsGrid.scrollBy({ left: -400, behavior: 'smooth' });
+    });
+}
 
 // Elementos do Lightbox (Imagem Expandida)
 const lightboxOverlay = document.getElementById('lightbox-modal');
@@ -147,7 +198,19 @@ openModalBtns.forEach(btn => {
         if (data) {
             // Preenche o texto
             modalTitle.textContent = data.title;
-            modalDescription.textContent = data.description;
+            modalDescription.innerHTML = data.description;
+            
+            // Logica do Botão CTA
+            const ctaContainer = document.getElementById('modal-cta-container');
+            const ctaLink = document.getElementById('modal-cta-link');
+            if (ctaContainer && ctaLink) {
+                if (data.link) {
+                    ctaLink.href = data.link;
+                    ctaContainer.style.display = 'block';
+                } else {
+                    ctaContainer.style.display = 'none';
+                }
+            }
             
             // Limpa as imagens antigas e cria as novas
             modalImages.innerHTML = '';

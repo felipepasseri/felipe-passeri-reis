@@ -207,8 +207,36 @@ if (empty($_SESSION['csrf_token'])) {
           <h2>Projetos em destaque</h2>
         </div>
 
-        <div class="projects-grid">
+        <div class="projects-wrapper">
+          <button class="slider-arrow prev" id="projects-prev"><i class="ph ph-caret-left"></i></button>
+          <div class="projects-grid" id="projects-grid">
+          
           <!-- Projeto 1 -->
+          <div
+            class="project-card"
+            data-aos="zoom-in-up"
+            data-aos-duration="800"
+            data-aos-delay="500"
+          >
+            <div class="status-badge">Concluído</div>
+            <div class="img-wrapper">
+              <img src="img/divino-sabor-img/logo.png" alt="Divino Sabor Restaurante" />
+            </div>
+            <div class="project-content">
+              <h3>Divino Sabor Restaurante</h3>
+              <p>
+                Sistema completo com vitrine do cardápio focada em SEO e painel administrativo para gestão de pedidos, fluxo de caixa e funcionários.
+              </p>
+              <div class="tech-tags">
+                <span>PHP</span><span>MySQL</span><span>Gestão</span><span>Financeiro</span>
+              </div>
+              <button class="project-link btn-open-modal" data-id="divino-sabor">
+                Ver projeto <i class="ph ph-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Projeto 2 -->
           <div
             class="project-card"
             data-aos="zoom-in-up"
@@ -235,7 +263,7 @@ if (empty($_SESSION['csrf_token'])) {
             </div>
           </div>
 
-          <!-- Projeto 2 -->
+          <!-- Projeto 3 -->
           <div
             class="project-card"
             data-aos="zoom-in-up"
@@ -261,6 +289,10 @@ if (empty($_SESSION['csrf_token'])) {
               </button>
             </div>
           </div>
+
+          
+          </div>
+          <button class="slider-arrow next" id="projects-next"><i class="ph ph-caret-right"></i></button>
         </div>
 
         <div class="text-center mt-40" data-aos="fade-up" data-aos-delay="200">
@@ -379,9 +411,14 @@ if (empty($_SESSION['csrf_token'])) {
 
           <div class="modal-info">
             <h2 id="modal-title">Título do Projeto</h2>
-            <p id="modal-description">
+            <div id="modal-description">
               Descrição detalhada do projeto aparecerá aqui.
-            </p>
+            </div>
+            <div id="modal-cta-container" style="display: none; margin-top: 2rem;">
+               <a href="#" id="modal-cta-link" target="_blank" class="btn btn-outline" style="display: inline-block;">
+                 Acessar Projeto <i class="ph ph-arrow-square-out"></i>
+               </a>
+            </div>
           </div>
         </div>
       </div>
