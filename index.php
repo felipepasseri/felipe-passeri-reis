@@ -11,6 +11,7 @@ if (empty($_SESSION['csrf_token'])) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Felipe Passeri Reis - Desenvolvedor Full Stack</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -216,7 +217,7 @@ if (empty($_SESSION['csrf_token'])) {
             class="project-card"
             data-aos="zoom-in-up"
             data-aos-duration="800"
-            data-aos-delay="500"
+            data-aos-delay="100"
           >
             <div class="status-badge">Concluído</div>
             <div class="img-wrapper">
@@ -235,13 +236,13 @@ if (empty($_SESSION['csrf_token'])) {
               </button>
             </div>
           </div>
-          
+
           <!-- Projeto 2 -->
           <div
             class="project-card"
             data-aos="zoom-in-up"
             data-aos-duration="800"
-            data-aos-delay="100"
+            data-aos-delay="500"
           >
             <div class="status-badge">Em desenvolvimento</div>
             <div class="img-wrapper">
